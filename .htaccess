@@ -1,2 +1,5 @@
 RewriteEngine On
-RewriteRule ^(.*) http://www.kenyadaniel.ca/wedding [L,R=301]
+RewriteRule ^$ /wedding [L]
+
+RewriteCond %{HTTP_HOST} !^www\.kenyadaniel\.ca [NC]
+RewriteRule ^(.*) http://www.kenyadaniel.ca/$1 [L,R=301] 
