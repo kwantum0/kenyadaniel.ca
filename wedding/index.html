@@ -1,8 +1,61 @@
 <DOCTYPE! html>
 <html>
 <head>
+	<meta charset="utf-8" /> 
+	<title>Coming Soon</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+body {
+	background: rgba(245,242,210,1);
+background: -moz-linear-gradient(top, rgba(245,242,210,1) 0%, rgba(212,200,182,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(245,242,210,1)), color-stop(100%, rgba(212,200,182,1)));
+background: -webkit-linear-gradient(top, rgba(245,242,210,1) 0%, rgba(212,200,182,1) 100%);
+background: -o-linear-gradient(top, rgba(245,242,210,1) 0%, rgba(212,200,182,1) 100%);
+background: -ms-linear-gradient(top, rgba(245,242,210,1) 0%, rgba(212,200,182,1) 100%);
+background: linear-gradient(to bottom, rgba(245,242,210,1) 0%, rgba(212,200,182,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f2d2', endColorstr='#d4c8b6', GradientType=0 );
+}
+.absolute-center {
+  margin: auto;
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  text-align: center;
+  line-height: 90vh
+}
+.announcement {
+	color: #fff;
+	font-size: 10vw;
+	font-family: 'Roboto', sans-serif;
+	text-shadow: 0em 0.03em 0em rgba(150, 150, 150, 0.2);
+}
+.floater {
+	padding: 4px;
+	font-size: 4vw;
+	position: absolute;
+	color: #fff;
+	text-shadow: 0em 0.06em 0em rgba(150, 150, 150, 0.2);
+	right: 2vw;
+	top: 2vw;
+	margin: 0px;
+}
+.floater:hover {
+	padding-top: calc(4px + 0.06em);
+	text-shadow: none;
+	color: rgba(255, 255, 255, 0.6);
+	cursor: pointer;
+}
+.floater:active {
+	color: #fff;
+}
+.floater:visited {
+	color: #fff;
+}
+</style>
 </head>
 <body>
-	Hello World!!
+	<p class="absolute-center announcement">Coming Soon</p>
+	<a class="floater" href="mailto:miloo2fran@yahoo.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
 </body>
 </html>
