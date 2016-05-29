@@ -1,3 +1,3 @@
 (function() {
-	log("hello world!");
+	console.log("page load");
 });
