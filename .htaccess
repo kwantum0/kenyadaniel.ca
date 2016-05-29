@@ -1,5 +1,0 @@
-RewriteEngine On
-RewriteRule ^$ /wedding [L]
-
-RewriteCond %{HTTP_HOST} !^www\.kenyadaniel\.ca [NC]
-RewriteRule ^(.*) http://www.kenyadaniel.ca/$1 [L,R=301] 
