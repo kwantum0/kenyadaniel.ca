@@ -1,3 +1,6 @@
+/************************
+ *		1200px up		*
+ ************************/
 html {
 	height: 100%;
 }
@@ -65,7 +68,30 @@ main  img {
 	height: 100px;
 	display:inline-block;
 }
-
+nav.mobile h2 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+nav.mobile {
+	display: none;
+	background-color: #fff;
+}
+nav.mobile ul {
+	display: none;
+}
+nav.mobile ul li {
+	display: block;
+	width: 100%; 
+}
+nav.mobile ul li {
+	padding: 0.5em 0em;
+}
+nav.mobile:hover > ul {
+	display: block;
+}
+nav.mobile:hover > h2 {
+	display: none;
+}
 nav {
 	padding-top: 20px;
 	font-family: Lulo, sans-serif;
@@ -109,3 +135,44 @@ footer img {
 	right: 0;
 	left: 0;
 }
+/******************************
+ *		800px to 1199px		  *
+ ******************************/
+ @media (max-width: 1199px) {
+	body {
+		background: none;
+	}
+	.container, footer {
+		width: 100%;
+		border: none;
+		box-shadow: none;
+	}
+ }
+ @media (max-width: 799px) {
+	main h1 {
+		font-size: 75px;
+		width: 160px;
+	}
+ }
+ @media (max-width: 599px) {
+	main h1 {
+		display: block;
+		width: 100%;
+		margin-left: -0.25em;
+		margin-bottom: 0.5em;
+	}
+	main h1:last-of-type{
+		margin-bottom: 0;
+	}
+	footer img {
+		height: auto;
+		max-width: 450px;
+		width: 85%;
+	}
+	nav:not(.mobile) {
+		display: none;
+	}
+	nav.mobile {
+		display: block;
+	}
+ }
