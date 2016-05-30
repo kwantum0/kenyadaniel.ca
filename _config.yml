@@ -1,2 +1,5 @@
 name: Daniel & Kenya
+app-path: /wedding
 markdown: kramdown
+
+permalink: /:title

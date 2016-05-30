@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta name="author" content="Daniel Franz">
+	<meta name="description" content="Wedding RVSP website for Daniel Franz & Kenya Suhan">
+	<meta name="keywords" content="Wedding, Gallery, RVSP, Vancouver, August 2016, Franz, Suhan">
+	
+	<title>{{ page.title }}</title>
+	
+	<!-- Load Fonts -->
+	<link href="http://db.onlinewebfonts.com/c/8fd23a85687f035d1da8fcd6179f34f9?family=Coronet" rel="stylesheet" type="text/css"/>
+	<link href="http://db.onlinewebfonts.com/c/5ef1470ebb9062485c258e0248bdce9b?family=Albertus" rel="stylesheet" type="text/css"/>
+	<link href="http://db.onlinewebfonts.com/c/116d187134420de5733c7c45bbc80c46?family=Lulo" rel="stylesheet" type="text/css"/>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{{ site.app-path }}/favicon.png" type="image/x-icon">
+	<link rel="icon" href="{{ site.app-path }}/favicon.png" type="image/x-icon">
+	
+	<!-- Load Page Assets -->
+	<link rel="stylesheet" type="text/css" href="{{ site.app-path }}/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="{{ site.app-path }}/styles/{{ page.style }}.css">
+	<script type="text/javascript" src="{{ site.app-path }}/app.js"></script> 
+	
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="{{ site.app-path }}/details">DETAILS</a></li>
+				<li><a href="{{ site.app-path }}/rsvp">RSVP</a></li>
+				<li><a href="{{ site.app-path }}/gallery">GALLERY</a></li>
+			</ul>
+		</nav>
+		<nav class="mobile"><h2>MENU</h2>
+			<ul>
+				<li><a href="{{ site.app-path }}/details">DETAILS</a></li>
+				<li><a href="{{ site.app-path }}/rsvp">RSVP</a></li>
+				<li><a href="{{ site.app-path }}/gallery">GALLERY</a></li>
+			</ul>
+		</nav>
+		<!-- CONTENT GOES HERE -->
+		{{ content }}
+		<div class="push"></div> <!-- Required to make footer work -->
+	</div>
+	<footer>
+		<img src="{{ site.app-path }}/assets/sunflower2.png" alt="sunflower accent">
+	</footer>
+
+</body>
+</html>
