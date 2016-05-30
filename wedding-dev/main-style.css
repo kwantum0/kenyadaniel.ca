@@ -159,7 +159,11 @@ footer img {
 	main {
 		margin-top: 10vh;
 	}
+	main span {
+		margin-bottom: 1em;
+	}
 	main h1 {
+	font-size: 50px;
 		display: block;
 		width: 100%;
 		margin-left: -0.25em;
