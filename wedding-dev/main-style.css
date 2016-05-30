@@ -70,9 +70,10 @@ main  img {
 }
 nav.mobile h2 {
 	text-align: center;
-	padding-bottom: 20px;
+	padding: 1em 0em;
 }
 nav.mobile {
+	padding: 0;
 	display: none;
 	background-color: #fff;
 }
@@ -155,6 +156,9 @@ footer img {
 	}
  }
  @media (max-width: 599px) {
+	main {
+		margin-top: 10vh;
+	}
 	main h1 {
 		display: block;
 		width: 100%;
