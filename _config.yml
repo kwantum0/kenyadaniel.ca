@@ -1,5 +1,5 @@
 name: Daniel & Kenya
-app-path: /wedding
+app-path: /wedding-dev
 markdown: kramdown
 
 permalink: /:title

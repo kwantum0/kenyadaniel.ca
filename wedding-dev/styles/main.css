@@ -126,7 +126,7 @@ nav.mobile:hover > h2 {
 }
 /* Horizontal Navigation Bar */
 nav {
-	padding-top: 20px;
+	padding: 20px 0px;
 	font-family: Lulo, sans-serif;
 	font-size: 18px;
 }
