@@ -66,60 +66,13 @@ let shuffleFilenames = function() {
 	}
 };
 
-let recursiveImgAppend = function(ref, target, array, index){
-	if(array.length > index) {
-		//recursive call
-		setTimeout(recursiveImgAppend(ref, target, array, index + 1), 0);
-		
-		let imageRef = ref.child(array[index]);
-			imageRef.getMetadata().then(function(metadata){
-			let child = $('<img class="grid-item" src="assets/null.png"'
-							+ 'data-src="' + metadata.downloadURLs[0] 
-							+ '" alt="' + metadata.name 
-							+ '" title="'+ metadata.name + '">');
-			target.append(child);
-		}).catch(function(error){
-			console.log(error);
-		});
-	} else {
-		console.log("recursive load complete");
-	}
-};
-// Fills the Gallery Element with Pictures
-let fillGalleryElement = function(){
-	
-	// Civil Marriage Section
-	let ref = photoStorage.ref().child(rootId).child(civilId);
-	let target = $("#" + civilId);
-	filenames.civilMarriage.forEach(function(value, index, array){
-		let imageRef = ref.child(value);
-		imageRef.getMetadata().then(function(metadata){
-			let child = $('<img class="grid-item"'
-							+ '  src="' + metadata.downloadURLs[0] 
-							+ '" alt="' + metadata.name 
-							+ '" title="'+ metadata.name + '">');
-			target.append(child);
-		}).catch(function(error){
-			console.log(error);
-		});
-	});
-};
-
 /********************
  *		MAIN		*
  ********************/
 $(document).ready(function(){
-	if($("#" + galleryId)) {
-		shuffleFilenames();
-		$grid = $('.grid').masonry({
-			itemSelector: '.grid-item',
-			columnWidth: '.grid-sizer',
-			percentPosition: true
+	$("img").unveil(0, function() {
+		$(this).load(function() {
+			this.style.opacity = 1;
 		});
-		$grid.imagesLoaded().always(function(instance) {
-			$grid.masonry('layout');
-		});
-		fillGalleryElement();
-
-	}
+	});
 });

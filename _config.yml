@@ -2,4 +2,79 @@ name: Daniel & Kenya
 app-path: /wedding-dev
 markdown: kramdown
 
+# Pretty Url Rewrite
 permalink: /:title
+
+# For Gallery
+empty-image-path: /assets/null.png
+gallery-photos:
+- name: Together as a Couple
+  id: couple
+  photos:
+  - title: 5 Levels too Deep
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2F5%20Levels%20too%20Deep.jpg?alt=media&token=402056b9-de21-4ab5-a8fc-af78abb8a6df
+  - title: Addict
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FAddict.jpg?alt=media&token=18863076-a55b-47a1-8876-5d61c99ebbb8
+  - title: Beach at Night
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FBeach%20at%20Night.JPG?alt=media&token=9a7d1289-26a3-4287-9568-72e5608c72f4
+  - title: Beach Fun
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FBeach%20Fun.JPG?alt=media&token=2ec2d379-2640-44e5-b12a-155243602726
+  - title: Close Up
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FClose%20Up.JPG?alt=media&token=6134869a-5e0e-48dc-9092-921372e8a88c
+  - title: Cycling in Brazil 2
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FCycling%20in%20Brazil%202.JPG?alt=media&token=b28884b4-40cb-4cbd-8f3c-abe02fff4db1
+  - title: Cycling in Brazil
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FCycling%20in%20Brazil.JPG?alt=media&token=d796de75-d343-45cf-8782-c4f7ff53747d
+  - title: Cycling Together
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FCycling%20Together.jpg?alt=media&token=a74ef75d-53ea-41f9-89be-c7baa7bffd66
+  - title: Flower Profile
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FFlower%20Profile.JPG?alt=media&token=604c8c32-65dd-4bb4-ad2f-58fdc19c1eba
+  - title: Forward Looking
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FForward%20Looking.JPG?alt=media&token=6d007772-4bbe-413f-8273-40c83fe669a3
+  - title: Galo de Madrugada
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FGalo%20de%20Madrugada.JPG?alt=media&token=86cdd37a-89d5-4348-bb78-f1fdce86863d
+  - title: Hiking 2
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FHiking%202.JPG?alt=media&token=8fe06138-0eaa-45bb-b154-73d9225d332d
+  - title: Hiking
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FHiking.JPG?alt=media&token=6d67255c-012f-411b-852a-ae278fdbc288
+  - title: Winter in Ontario
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FWinter%20in%20Ontario.jpg?alt=media&token=43df7ace-7aec-4326-b5e7-226c6b08b5b0
+  - title: In her Lap
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FIn%20her%20Lap.JPG?alt=media&token=3b17eade-9db8-40b7-ace6-e8d83b47cc12
+  - title: In the Woods
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FIn%20the%20Woods.jpg?alt=media&token=3eb4c06a-289e-4379-9fe2-3acc50612bf0
+  - title: Just Kidding
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FJust%20Kidding.JPG?alt=media&token=2f6070c8-b24e-4fd3-a37b-a49e4ed1ff10
+  - title: Kenya Cake
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FKenya%20Cake.JPG?alt=media&token=f4a92e13-8eb5-464b-9098-1a65e4c0891f
+  - title: Out and About
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FOut%20and%20About.jpg?alt=media&token=f63d8a08-4edf-48da-8406-a968bebcbd23
+  - title: Laughing on a Bridge
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FLaughing%20on%20a%20Bridge.JPG?alt=media&token=54c068bb-3ff3-4a4b-a9f8-14c896afac14
+  - title: Leaning Against a Tree
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FLeaning%20Against%20a%20Tree.JPG?alt=media&token=93d1ec15-519b-43d7-b96f-f939365007b3
+  - title: On a Stump
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FOn%20a%20Stump.JPG?alt=media&token=0543009c-339b-4357-ace6-6dce53105236
+  - title: Reading by the River
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FReading%20by%20the%20River.jpg?alt=media&token=fdb6017f-0892-498c-a7f1-d50c1f266bfd
+  - title: Selfie in Traffic
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSelfie%20in%20Traffic.jpg?alt=media&token=fbfad2c3-c28e-4ea6-9a22-a044fe018485
+  - title: Serious
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSerious.JPG?alt=media&token=d75c14bd-ff9c-489c-9df4-f71363e8abb4
+  - title: Smiling in the Sun
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSmiling%20in%20the%20Sun.jpg?alt=media&token=81fcb602-cdbd-4050-959f-7dc65fa3ce6b
+  - title: Surprised
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSurprised.jpg?alt=media&token=ebee99dc-6993-49a8-8960-645731e7a32d
+  - title: At the Garden
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FAt%20the%20Garden.jpg?alt=media&token=d24fca25-df37-455a-95a3-5978fb1cedaa
+  - title: Lazing with Flowers
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FLazing%20with%20Flowers.JPG?alt=media&token=5bb203ac-bf8e-4a23-b3fd-a218c2c3ceeb
+- name: Civil Ceremony
+  id: civil
+  photos: 
+- name: Wedding Ceremony
+  id: church
+  photos: 
+- name: Reception
+  id: party
+  photos: 

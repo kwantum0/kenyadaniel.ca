@@ -3,14 +3,19 @@ layout: default
 title: GALLERY | Kenya & Daniel
 style: gallery
 ---
-<noscript>
-	<main class="announcement">
-		Javascript is&nbsp;required&nbsp;to&nbsp;run this&nbsp;gallery.
-	</main>
-</noscript>
-<section id="gallery">
-	<section class="grid" id="civil-marriage">
-	</section>
-	<section class="grid" id="couple">
-	</section>
-</section>
+<main id="gallery">
+	{% for folder in site.gallery-photos %}
+		<h2>{{ folder.name }}</h2>
+		{% if folder.photos %}
+			<section id="{{ folder.id }}">
+				{% for file in folder.photos %}
+				<div>
+					<img src="{{ site.app-path | append: site.empty-image-path }}" data-src="{{ file.url }}" title="{{ file.title }}" alt="{{ file.title }}" />
+				</div>
+				{% endfor %}
+			</section>
+		{% else %}
+			<span>There&nbsp;are no&nbsp;photos yet!</span>
+		{% endif %}
+	{% endfor %}
+</main>
