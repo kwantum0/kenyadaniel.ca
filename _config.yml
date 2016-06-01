@@ -1,3 +1,4 @@
+# General App Variables
 name: Daniel & Kenya
 app-path: /wedding-dev
 markdown: kramdown
@@ -12,63 +13,179 @@ gallery-photos:
   id: couple
   photos:
   - title: 5 Levels too Deep
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2F5%20Levels%20too%20Deep.jpg?alt=media&token=402056b9-de21-4ab5-a8fc-af78abb8a6df
+    height: 1080
+    width: 999
+    size: 512.44
+    tags: [kitchener, college, daniel, glasses]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2F5%20Levels%20too%20Deep%20(999x1080).jpg?alt=media&token=2a3c6cbf-a9ba-4b00-a983-7363928f8dfa
   - title: Addict
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FAddict.jpg?alt=media&token=18863076-a55b-47a1-8876-5d61c99ebbb8
+    height: 1080
+    width: 606
+    size: 291.2
+    tags: [ktichener, ipad, scrabble, snapchat, kenya]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FAddict%20(606x1080).jpg?alt=media&token=b2ecb88b-da23-4bc1-af98-b7d50da078c4
   - title: Beach at Night
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FBeach%20at%20Night.JPG?alt=media&token=9a7d1289-26a3-4287-9568-72e5608c72f4
+    height: 850
+    width: 1080
+    size: 484.92
+    tags: [nighttime, brazil, beach, daniel, kenya]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FBeach%20at%20Night%20(1080x850).jpg?alt=media&token=e2cf14be-97b8-4d69-a96f-e0205b7f733e
   - title: Beach Fun
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FBeach%20Fun.JPG?alt=media&token=2ec2d379-2640-44e5-b12a-155243602726
+    height: 1080
+    width: 594
+    size: 340.06
+    tags: [brazil, beach, daniel, sunny]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FBeach%20Fun%20(594x1080).jpg?alt=media&token=9997e9ff-903a-497b-a81b-44265bcbe3c6
   - title: Close Up
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FClose%20Up.JPG?alt=media&token=6134869a-5e0e-48dc-9092-921372e8a88c
-  - title: Cycling in Brazil 2
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FCycling%20in%20Brazil%202.JPG?alt=media&token=b28884b4-40cb-4cbd-8f3c-abe02fff4db1
+    height: 810
+    width: 1080
+    size: 463.21
+    tags: [vancouver, daniel, kenya]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FClose%20Up%20(1080x810).jpg?alt=media&token=2ca3dd95-7ec7-4737-be72-1925624afc48
   - title: Cycling in Brazil
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FCycling%20in%20Brazil.JPG?alt=media&token=d796de75-d343-45cf-8782-c4f7ff53747d
+    height: 1080
+    width: 635
+    size: 446.52
+    tags: [brazil, cycling, kenya]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FCycling%20in%20Brazil%20(635x1080).jpg?alt=media&token=3404f3e6-9336-47b7-b960-db19c3bd5014
+  - title: Cycling in Brazil 2
+    height: 1080
+    width: 975
+    size: 740.83
+    tags: [brazil, cycling, daniel]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FCycling%20in%20Brazil%202%20(975x1080).jpg?alt=media&token=92b70782-8694-47cb-9d2d-4ced10ff6627
   - title: Cycling Together
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FCycling%20Together.jpg?alt=media&token=a74ef75d-53ea-41f9-89be-c7baa7bffd66
+    height: 608
+    width: 1080
+    size: 486.43
+    tags: [vancouver, cycling, daniel, kenya] 
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FCycling%20Together%20(1080x608).jpg?alt=media&token=3791d66e-da19-4c7b-9390-335dbc2ae8c5
   - title: Flower Profile
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FFlower%20Profile.JPG?alt=media&token=604c8c32-65dd-4bb4-ad2f-58fdc19c1eba
+    height: 1080
+    width: 810
+    size: 402.68
+    tags: [brazil, flower, kenya, glasses]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FFlower%20Profile%20(810x1080).jpg?alt=media&token=46f7d612-dfe4-4eac-852b-ac2b91e8ef56
   - title: Forward Looking
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FForward%20Looking.JPG?alt=media&token=6d007772-4bbe-413f-8273-40c83fe669a3
+    height: 630
+    width: 1080
+    size: 465.44
+    tags: [vancouver, bridge, kenya, daniel]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FForward%20Looking%20(1080x630).jpg?alt=media&token=f4e1923b-4b2c-44a6-a8f4-0628929f5589
   - title: Galo de Madrugada
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FGalo%20de%20Madrugada.JPG?alt=media&token=86cdd37a-89d5-4348-bb78-f1fdce86863d
+    height: 1080
+    width: 695
+    size: 481.46
+    tags: [brazil, carnival, kenya, daniel, hats]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FGalo%20de%20Madrugada%20(695x1080).jpg?alt=media&token=452244b2-876c-427c-9075-eb1d94fa5282
   - title: Hiking 2
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FHiking%202.JPG?alt=media&token=8fe06138-0eaa-45bb-b154-73d9225d332d
+    height: 1080
+    width: 1068
+    size: 605.94
+    tags: [brazil, hiking, kenya]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FHiking%202%20(1068x1080).jpg?alt=media&token=7e79d97c-68e3-4c00-b5a6-62bb8b90c75f
   - title: Hiking
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FHiking.JPG?alt=media&token=6d67255c-012f-411b-852a-ae278fdbc288
+    height: 1080
+    width: 1007 
+    size: 910.94
+    tags: [brazil, hiking, daniel]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FHiking%20(1007x1080).jpg?alt=media&token=47ecdeac-a382-4c00-a578-22b313506c9a
   - title: Winter in Ontario
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FWinter%20in%20Ontario.jpg?alt=media&token=43df7ace-7aec-4326-b5e7-226c6b08b5b0
+    height: 608
+    width: 1080
+    size: 350.11
+    tags: [kitchener, winter, park, nighttime, daniel, kenya]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FWinter%20in%20Ontario%20(1080x608).jpg?alt=media&token=0840c27b-67de-4060-920d-a0df31623cff
   - title: In her Lap
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FIn%20her%20Lap.JPG?alt=media&token=3b17eade-9db8-40b7-ace6-e8d83b47cc12
+    height: 810
+    width: 1080
+    size: 667.25
+    tags: [vancouver, kenya, daniel, asleep]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FIn%20her%20Lap%20(1080x810).jpg?alt=media&token=f016c2f8-9268-4318-a218-62a4747a7117
   - title: In the Woods
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FIn%20the%20Woods.jpg?alt=media&token=3eb4c06a-289e-4379-9fe2-3acc50612bf0
+    height: 1080
+    width: 607
+    size: 401.18
+    tags: [surrey, hiking, forrest, daniel, kenya]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FIn%20the%20Woods%20(607x1080).jpg?alt=media&token=39022e57-87c9-4d15-8c86-4df8c5f9007e
   - title: Just Kidding
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FJust%20Kidding.JPG?alt=media&token=2f6070c8-b24e-4fd3-a37b-a49e4ed1ff10
+    height: 1080
+    width: 810
+    size: 401.18
+    tags: [vancouver, laughing, daniel, kenya]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FJust%20Kidding%20(810x1080).jpg?alt=media&token=08ace987-6f16-4948-bd21-bb8530992d23
   - title: Kenya Cake
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FKenya%20Cake.JPG?alt=media&token=f4a92e13-8eb5-464b-9098-1a65e4c0891f
+    height: 1080
+    width: 643
+    size: 350.25
+    tags: [hazelton, kenya, cake]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FKenya%20Cake%20(643x1080).jpg?alt=media&token=cbc15946-33d9-43bf-9b8d-652fe6b985b6
   - title: Out and About
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FOut%20and%20About.jpg?alt=media&token=f63d8a08-4edf-48da-8406-a968bebcbd23
+    height: 608
+    width: 1080
+    size: 378.35
+    tags: [kitchener, cycling, kenya, daniel]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FOut%20and%20About%20(1080x608).jpg?alt=media&token=d6809a60-19e1-4158-9704-a6ea0a76ffe6
   - title: Laughing on a Bridge
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FLaughing%20on%20a%20Bridge.JPG?alt=media&token=54c068bb-3ff3-4a4b-a9f8-14c896afac14
+    height: 766
+    width: 1080
+    size: 533.35
+    tags: [vancouver, bridge, kenya, daniel, laughing]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FLaughing%20on%20a%20Bridge%20(1080x766).jpg?alt=media&token=af041893-d1a2-4d21-aa21-ae2f28d65579
   - title: Leaning Against a Tree
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FLeaning%20Against%20a%20Tree.JPG?alt=media&token=93d1ec15-519b-43d7-b96f-f939365007b3
+    height: 810
+    width: 1080
+    size: 781.99
+    tags: [vancouver, tree, daniel, kenya]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FLeaning%20Against%20a%20Tree%20(1080x810).jpg?alt=media&token=e2e4ee6c-c468-43b5-a7ba-53efffc9406a
   - title: On a Stump
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FOn%20a%20Stump.JPG?alt=media&token=0543009c-339b-4357-ace6-6dce53105236
+    height: 810
+    width: 1080
+    size: 647.98
+    tags: [vancouver, daniel, kenya, stump, tree]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FOn%20a%20Stump%20(1080x810).jpg?alt=media&token=d6b7da51-fbf7-4d2a-938c-6d893e7c0223
   - title: Reading by the River
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FReading%20by%20the%20River.jpg?alt=media&token=fdb6017f-0892-498c-a7f1-d50c1f266bfd
+    height: 1080
+    width: 608
+    size: 267.49
+    tags: [hazelton, kenya, river, library, reading]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FReading%20by%20the%20River%20(608x1080).jpg?alt=media&token=42b9980e-7a70-4076-a4d9-f81b9c1575c2
   - title: Selfie in Traffic
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSelfie%20in%20Traffic.jpg?alt=media&token=fbfad2c3-c28e-4ea6-9a22-a044fe018485
+    height: 608
+    width: 1080
+    size: 385.81
+    tags: [daniel, kenya, driving, kitchener]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FReading%20by%20the%20River%20(608x1080).jpg?alt=media&token=42b9980e-7a70-4076-a4d9-f81b9c1575c2
   - title: Serious
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSerious.JPG?alt=media&token=d75c14bd-ff9c-489c-9df4-f71363e8abb4
+    height: 781
+    width: 1080
+    size: 558.08
+    tags: [daniel, kenya, rock, serious, vancouver]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSerious%20(1080x781).jpg?alt=media&token=62222820-37fe-4c7b-9322-c084024d0095
   - title: Smiling in the Sun
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSmiling%20in%20the%20Sun.jpg?alt=media&token=81fcb602-cdbd-4050-959f-7dc65fa3ce6b
+    height: 608
+    width: 1080
+    size: 449.44
+    tags: [kenya, kitchener, picnic, sunny]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSmiling%20in%20the%20Sun%20(1080x608).jpg?alt=media&token=a95ad7bf-3e02-48d4-a3ac-ac383ed2589d
   - title: Surprised
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSurprised.jpg?alt=media&token=ebee99dc-6993-49a8-8960-645731e7a32d
+    height: 1080
+    width: 810
+    size: 416.15
+    tags: [kenya, daniel, surrey]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FSurprised%20(810x1080).jpg?alt=media&token=c841ce74-2fab-4467-be89-e40331fe0833
   - title: At the Garden
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FAt%20the%20Garden.jpg?alt=media&token=d24fca25-df37-455a-95a3-5978fb1cedaa
+    height: 1080
+    width: 607
+    size: 346.3
+    tags: [surrey, garden, kenya, daniel, sunny]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FAt%20the%20Garden%20(607x1080).jpg?alt=media&token=059ec0a7-469c-4a37-816c-b9f7ca9c3f74
   - title: Lazing with Flowers
-    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FLazing%20with%20Flowers.JPG?alt=media&token=5bb203ac-bf8e-4a23-b3fd-a218c2c3ceeb
+    height: 810
+    width: 1080
+    size: 794.63
+    tags: [vancouver, flower, kenya, daniel]
+    url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcouple%2FLazing%20with%20Flowers%20(1080x810).jpg?alt=media&token=09a58131-3e83-41eb-b3c2-b9c5b115246c
 - name: Civil Ceremony
   id: civil
   photos: 

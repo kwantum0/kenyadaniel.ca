@@ -35,13 +35,15 @@
 	width: 100%;
 	height: auto;
 	opacity: 0;
-	transition: opacity .3s ease-in;
+	transition: opacity 200ms ease-in;
 	
-	-webkit-transform:	scale3d(1,1,1);
-	-moz-transform: 	scale3d(1,1,1);
-    -o-transform: 		scale3d(1,1,1);
-    -ms-transform: 		scale3d(1,1,1);
-    transform: 			scale3d(1,1,1);
+	-webkit-column-break-inside:avoid;
+	-moz-column-break-inside:avoid;
+	-o-column-break-inside:avoid;
+	-ms-column-break-inside:avoid;
+	column-break-inside:avoid;
+	-webkit-backface-visibility:hidden;
+	-webkit-transition: transform 200ms ease-in;
 }
 #gallery section img:hover {
     -webkit-transform: 	scale(1.5);
@@ -49,6 +51,7 @@
     -o-transform: 		scale(1.5);
     -ms-transform: 		scale(1.5);
     transform: 			scale(1.5);
+	-webkit-transition: transform 200ms ease-in;
 }
 #gallery section div {
 	display: block;

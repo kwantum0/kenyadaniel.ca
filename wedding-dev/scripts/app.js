@@ -71,7 +71,7 @@ let shuffleFilenames = function() {
  ********************/
 $(document).ready(function(){
 	$("img").unveil(0, function() {
-		$(this).load(function() {
+		$(this).load(200, function() {
 			this.style.opacity = 1;
 		});
 	});

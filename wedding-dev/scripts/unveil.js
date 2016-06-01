@@ -15,7 +15,8 @@
     var $w = $(window),
         th = threshold || 0,
         retina = window.devicePixelRatio > 1,
-        attrib = retina? "data-src-retina" : "data-src",
+        // attrib = retina? "data-src-retina" : "data-src",
+		attrib = "data-src",
         images = this,
         loaded;
 
