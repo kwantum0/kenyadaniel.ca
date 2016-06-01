@@ -1,7 +1,9 @@
 /****************************
  *		1200px and up		*
  ****************************/
-#gallery section {
+ 
+/* Page Structure */
+ #gallery section {
 	/* Prevent vertical gaps */
 	line-height: 0;
 
@@ -34,9 +36,12 @@
 	/* Just in case there are inline attributes */
 	width: 100%;
 	height: auto;
+	
+	/* For animations */
 	opacity: 0;
 	transition: all 200ms ease-in;
 	
+	/* Fix for column visibility bug on overflowing elements */
 	-webkit-column-break-inside:avoid;
 	-moz-column-break-inside:avoid;
 	-o-column-break-inside:avoid;
@@ -44,19 +49,64 @@
 	column-break-inside:avoid;
 	-webkit-backface-visibility:hidden;
 }
+
+/* For Fullscreen Mode */
+.full-body-html {
+	overflow: hidden;
+}
+.fullscreen-div {
+	min-height:100%;
+    min-width:100%;
+    height:auto;
+    width:auto;
+    position:absolute;
+    top:0; bottom:0;
+    left:0; right:0;
+    margin:auto;
+	z-index: 100;
+	background-color: #000;
+	
+	text-align: center;
+	line-height: 100vh;
+}
+#gallery section .fullscreen-div img,
+#gallery section .fullscreen-div img:hover {
+	/* removes animation effects */
+	-webkit-transform: 	none;
+	-moz-transform: 	none;
+	-o-transform: 		none;
+	-ms-transform: 		none;
+	transform: 			none;
+	-webkit-transition: none;
+	-moz-transition:	none;
+	-o-transition: 		none;
+	-ms-transition: 	none;
+	transition: 		none;
+	
+	/* to maintain aspect ratio of fullscreen image */
+	width: auto;
+	height: auto;
+	max-width:100%;
+	max-height:100%;
+	
+	/* to vertically center image */
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* Required for hover to work */
 #gallery section img:hover {
-    -webkit-transform: 	scale(1.5);
-    -moz-transform: 	scale(1.5);
-    -o-transform: 		scale(1.5);
-    -ms-transform: 		scale(1.5);
-    transform: 			scale(1.5);
+    -webkit-transform: 	scale(1.2);
+    -moz-transform: 	scale(1.2);
+    -o-transform: 		scale(1.2);
+    -ms-transform: 		scale(1.2);
+    transform: 			scale(1.2);
 	-webkit-transition: transform 200ms ease-in;
 	cursor: pointer;
 }
 #gallery section div {
 	display: block;
 	overflow: hidden;
-	position: relative;
 }
 /******************************
  *		800px to 1199px		  *

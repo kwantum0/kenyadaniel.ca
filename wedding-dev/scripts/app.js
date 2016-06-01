@@ -7,8 +7,8 @@ let galleryId	= "gallery"
 let civilId  	= "civil-marriage";
 let coupleId 	= "couple";
 
-
-let $grid;
+// GLOBAL REFERENCES
+let $fullscreenElement;
 
 // FIREBASE CONFIG 
 let config = {
@@ -66,13 +66,58 @@ let shuffleFilenames = function() {
 	}
 };
 
+// Make an Element Fullscreen
+let requestFullscreen = function(element) {
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+}
+
+// Remove Fullscreen
+let stopFullscreen = function() {
+	if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+	} else if (document.webkitCancelFullScreen) {
+		document.webkitCancelFullScreen();
+	} else {
+		document.exitFullscreen();
+	}
+}
+
+// Toggles fullscreen on click
+let toggleFullscreen = function(element) {
+	stopFullscreen();
+	if(element === $fullscreenElement) {
+		$("body, html").removeClass("full-body-html");
+		$(element).parent().removeClass("fullscreen-div");
+	} else {
+		$fullscreenElement = element;
+		$("body, html").addClass("full-body-html");
+		let parent = $(element).parent().addClass("fullscreen-div")[0];
+		requestFullscreen(parent);
+	}
+}
+
 /********************
  *		MAIN		*
  ********************/
 $(document).ready(function(){
-	$("section img").unveil(200, function() {
-		$(this).load(function() {
-			this.style.opacity = 1;
+	if($("#gallery")){
+		$("section img").unveil(200, function() {
+			$(this).load(function() {
+				this.style.opacity = 1;
+				$(this).click(function() {
+					toggleFullscreen(this);
+				});
+			});
 		});
-	});
+	}
 });
