@@ -35,7 +35,7 @@
 	width: 100%;
 	height: auto;
 	opacity: 0;
-	transition: opacity 200ms ease-in;
+	transition: all 200ms ease-in;
 	
 	-webkit-column-break-inside:avoid;
 	-moz-column-break-inside:avoid;
@@ -43,7 +43,6 @@
 	-ms-column-break-inside:avoid;
 	column-break-inside:avoid;
 	-webkit-backface-visibility:hidden;
-	-webkit-transition: transform 200ms ease-in;
 }
 #gallery section img:hover {
     -webkit-transform: 	scale(1.5);
@@ -52,6 +51,7 @@
     -ms-transform: 		scale(1.5);
     transform: 			scale(1.5);
 	-webkit-transition: transform 200ms ease-in;
+	cursor: pointer;
 }
 #gallery section div {
 	display: block;

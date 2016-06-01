@@ -70,8 +70,8 @@ let shuffleFilenames = function() {
  *		MAIN		*
  ********************/
 $(document).ready(function(){
-	$("img").unveil(0, function() {
-		$(this).load(200, function() {
+	$("section img").unveil(200, function() {
+		$(this).load(function() {
 			this.style.opacity = 1;
 		});
 	});
