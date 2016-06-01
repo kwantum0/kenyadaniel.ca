@@ -145,3 +145,17 @@
 		font-size: 3em;
 	}
 }
+
+/****************************
+ *		Touchscreens		*
+ ****************************/
+@media (pointer: coarse),
+@media (pointer: none) {
+	#gallery section img:hover {
+		-webkit-transform: 	none;
+		-moz-transform: 	none;
+		-o-transform: 		none;
+		-ms-transform: 		none;
+		transform: 			none;
+	}
+}
