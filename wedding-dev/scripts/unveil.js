@@ -15,8 +15,7 @@
     var $w = $(window),
         th = threshold || 0,
         retina = window.devicePixelRatio > 1,
-        // attrib = retina? "data-src-retina" : "data-src",
-		attrib = "data-src",
+        attrib = retina? "data-src-retina" : "data-src",
         images = this,
         loaded;
 
@@ -46,7 +45,7 @@
       images = images.not(loaded);
     }
 
-    $w.on("scroll.unveil resize.unveil lookup.unveil touchmove.unveil", unveil);
+    $w.on("scroll.unveil resize.unveil lookup.unveil touchmove.unveil load.unveil", unveil);
 
     unveil();
 
