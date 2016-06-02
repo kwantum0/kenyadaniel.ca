@@ -2,7 +2,6 @@
  *		CONSTANTS		*
  ************************/
 var imgLoadThreshold = 200;
-var iOS8 = navigator.userAgent.match(/(iPad|iPhone|iPod)/i);
 
 // GLOBAL REFERENCES
 var $fullscreenElement;
@@ -118,9 +117,3 @@ $(window).load(function(){
 		});
 	}
 });
-if(iOS8) {
-	alert("h3ll0!");
-	setTimeout(function() {
-		$(window).trigger('load');
-	}, 3500);
-}
