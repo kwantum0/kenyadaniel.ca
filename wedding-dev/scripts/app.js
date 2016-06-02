@@ -1,14 +1,14 @@
 /************************
  *		CONSTANTS		*
  ************************/
-let imgLoadThreshold = 200;
-let iOS8 = navigator.userAgent.match(/(iPad|iPhone|iPod)/i);
+var imgLoadThreshold = 200;
+var iOS8 = navigator.userAgent.match(/(iPad|iPhone|iPod)/i);
 
 // GLOBAL REFERENCES
-let $fullscreenElement;
+var $fullscreenElement;
 
 // FIREBASE CONFIG 
-let config = {
+var config = {
     apiKey: "AIzaSyDEMkdlVuBzFKJU0G2ed7F-ByClU21Iowk",
     authDomain: "wedding-36c46.firebaseapp.com",
     databaseURL: "https://wedding-36c46.firebaseio.com",
@@ -19,22 +19,22 @@ let config = {
  *		FIREBASE		*
  ************************/
 firebase.initializeApp(config);
-let photoStorage = firebase.storage();
+var photoStorage = firebase.storage();
   
 /****************************
  *		UTILITY FUNC		*
  ****************************/
 // Generates a Unique ID
-let generateGuid = function() {
+var generateGuid = function() {
 	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-		let r = Math.random()*16|0
-		let v = c == 'x' ? r : (r&0x3|0x8);
+		var r = Math.random()*16|0
+		var v = c == 'x' ? r : (r&0x3|0x8);
 		return v.toString(16);
 	});
 };
 
 // Randomly Permutes an Array and returns it
-let shuffleArray = function(array) {
+var shuffleArray = function(array) {
 	if(array.constructor === Array) {
 		var currentIndex = array.length, temporaryValue, randomIndex;
 		// While there remain elements to shuffle...
@@ -55,7 +55,7 @@ let shuffleArray = function(array) {
 };
 
 // Randomly Permutes arrays in filenames object in place
-let shuffleFilenames = function() {
+var shuffleFilenames = function() {
 	if(!!filenames) {
 		Object.keys(filenames).forEach(function(key,index){
 			filenames[key] = shuffleArray(filenames[key]);
@@ -64,7 +64,7 @@ let shuffleFilenames = function() {
 };
 
 // Make an Element Fullscreen
-let requestFullscreen = function(element) {
+var requestFullscreen = function(element) {
     // Supports most browsers and their versions.
     var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
 
@@ -79,7 +79,7 @@ let requestFullscreen = function(element) {
 }
 
 // Remove Fullscreen
-let stopFullscreen = function() {
+var stopFullscreen = function() {
 	if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
 	} else if (document.webkitCancelFullScreen) {
@@ -90,7 +90,7 @@ let stopFullscreen = function() {
 }
 
 // Toggles fullscreen on click
-let toggleFullscreen = function(element) {
+var toggleFullscreen = function(element) {
 	stopFullscreen();
 	if(element === $fullscreenElement) {
 		$("body, html").removeClass("full-body-html");
@@ -98,7 +98,7 @@ let toggleFullscreen = function(element) {
 	} else {
 		$fullscreenElement = element;
 		$("body, html").addClass("full-body-html");
-		let parent = $(element).parent().addClass("fullscreen-div")[0];
+		var parent = $(element).parent().addClass("fullscreen-div")[0];
 		requestFullscreen(parent);
 	}
 }
