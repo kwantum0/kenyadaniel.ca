@@ -108,7 +108,7 @@ let toggleFullscreen = function(element) {
  ********************/
 $(window).load(function(){
 	if($("#gallery")){
-		alert("here");
+		alert("h3ll0!");
 		$("section img").unveil(imgLoadThreshold, function() {
 			$(this).load(function() {
 				this.style.opacity = 1;
@@ -119,3 +119,8 @@ $(window).load(function(){
 		});
 	}
 });
+if(iOS8) {
+	setTimeout(function() {
+		$(window).trigger('load');
+	}, 3500);
+}
