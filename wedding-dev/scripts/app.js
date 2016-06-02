@@ -2,7 +2,7 @@
  *		CONSTANTS		*
  ************************/
 let imgLoadThreshold = 200;
-let iOS8 = navigator.userAgent.match(/(iPad|iPhone|iPod).*/i);
+let iOS8 = navigator.userAgent.match(/(iPad|iPhone|iPod)/i);
 
 // GLOBAL REFERENCES
 let $fullscreenElement;
