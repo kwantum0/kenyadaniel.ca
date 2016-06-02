@@ -2,7 +2,7 @@
  *		CONSTANTS		*
  ************************/
 let imgLoadThreshold = 200;
-let iOS8 = navigator.userAgent.match(/(iPad|iPhone|iPod).*OS *_\d/i);
+let iOS8 = navigator.userAgent.match(/(iPad|iPhone|iPod).*/i);
 
 // GLOBAL REFERENCES
 let $fullscreenElement;
@@ -108,7 +108,6 @@ let toggleFullscreen = function(element) {
  ********************/
 $(window).load(function(){
 	if($("#gallery")){
-		alert("h3ll0!");
 		$("section img").unveil(imgLoadThreshold, function() {
 			$(this).load(function() {
 				this.style.opacity = 1;
@@ -120,6 +119,7 @@ $(window).load(function(){
 	}
 });
 if(iOS8) {
+	alert("h3ll0!");
 	setTimeout(function() {
 		$(window).trigger('load');
 	}, 3500);
