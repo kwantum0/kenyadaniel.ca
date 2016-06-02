@@ -2,6 +2,7 @@
  *		CONSTANTS		*
  ************************/
 let imgLoadThreshold = 200;
+let iOS8 = navigator.userAgent.match(/(iPad|iPhone|iPod).*OS *_\d/i);
 
 // GLOBAL REFERENCES
 let $fullscreenElement;
@@ -105,10 +106,10 @@ let toggleFullscreen = function(element) {
 /********************
  *		MAIN		*
  ********************/
-$(document).ready(function(){
+$(window).load(function(){
 	if($("#gallery")){
-		images = $("section img");
-		images.unveil(imgLoadThreshold, function() {
+		alert("here");
+		$("section img").unveil(imgLoadThreshold, function() {
 			$(this).load(function() {
 				this.style.opacity = 1;
 				$(this).click(function() {
@@ -116,18 +117,5 @@ $(document).ready(function(){
 				});
 			});
 		});
-		// force iOS Safari to load images that are visible on page load
-		setTimeout(function() {
-			inview = images.filter(function() {
-				var $e = $(this),
-					wt = $w.scrollTop(),
-					wb = wt + $w.height(),
-					et = $e.offset().top,
-					eb = et + $e.height();
-
-				return eb >= wt - imgLoadThreshold && et <= wb + imgLoadThreshold;
-			});
-			inview.trigger("unveil");
-		},2000);
 	}
 });
