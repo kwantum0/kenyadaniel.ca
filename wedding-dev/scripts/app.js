@@ -1,11 +1,7 @@
 /************************
  *		CONSTANTS		*
  ************************/
-// GALLERY CONTAINER ID
-let rootId		= "gallery-photos";
-let galleryId	= "gallery"
-let civilId  	= "civil-marriage";
-let coupleId 	= "couple";
+let imgLoadThreshold = 200;
 
 // GLOBAL REFERENCES
 let $fullscreenElement;
@@ -109,9 +105,10 @@ let toggleFullscreen = function(element) {
 /********************
  *		MAIN		*
  ********************/
-$(window).load(function(){
+$(document).ready(function(){
 	if($("#gallery")){
-		$("section img").unveil(200, function() {
+		images = $("section img");
+		images.unveil(imgLoadThreshold, function() {
 			$(this).load(function() {
 				this.style.opacity = 1;
 				$(this).click(function() {
@@ -119,5 +116,18 @@ $(window).load(function(){
 				});
 			});
 		});
+		// force iOS Safari to load images that are visible on page load
+		setTimeout(function() {
+			inview = images.filter(function() {
+				var $e = $(this),
+					wt = $w.scrollTop(),
+					wb = wt + $w.height(),
+					et = $e.offset().top,
+					eb = et + $e.height();
+
+				return eb >= wt - imgLoadThreshold && et <= wb + imgLoadThreshold;
+			});
+			inview.trigger("unveil");
+		},100);
 	}
 });
