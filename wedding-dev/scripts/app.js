@@ -4,7 +4,7 @@
 var imgLoadThreshold = 200;
 
 // GLOBAL REFERENCES
-var $fullscreenElement;
+var $fullscreenElement = null;
 
 // FIREBASE CONFIG 
 var config = {
@@ -91,17 +91,34 @@ var stopFullscreen = function() {
 // Toggles fullscreen on click
 var toggleFullscreen = function(element) {
 	stopFullscreen();
-	if(element === $fullscreenElement) {
-		$("body, html").removeClass("full-body-html");
-		$(element).parent().removeClass("fullscreen-div");
-	} else {
-		$fullscreenElement = element;
-		$("body, html").addClass("full-body-html");
-		var parent = $(element).parent().addClass("fullscreen-div")[0];
-		requestFullscreen(parent);
+	if(element){
+		if(element === $fullscreenElement) {
+			$("body, html").removeClass("full-body-html");
+			$(element).parent().removeClass("fullscreen-div");
+			$fullscreenElement = null;
+		} else {
+			$fullscreenElement = element;
+			$("body, html").addClass("full-body-html");
+			var parent = $(element).parent().addClass("fullscreen-div")[0];
+			requestFullscreen(parent);
+		}
 	}
 }
 
+// Toggles gallery collapse 
+var galleryToggle = function(target, arrow) {
+	if($(arrow).hasClass("down-arrow")){
+		$(arrow).removeClass("down-arrow");
+		$(arrow).addClass("up-arrow");
+		$('#' + target).hide();
+		$("section img").unveil();
+	} else {
+		$(arrow).addClass("down-arrow");
+		$(arrow).removeClass("up-arrow");
+		$('#' + target).show();
+		$("section img").unveil();
+	}
+}
 /********************
  *		MAIN		*
  ********************/
@@ -116,4 +133,9 @@ $(window).load(function(){
 			});
 		});
 	}
+	$(document).keyup(function(e) {
+		if(e.keyCode == 27) {
+			toggleFullscreen($fullscreenElement)
+		}
+	});
 });

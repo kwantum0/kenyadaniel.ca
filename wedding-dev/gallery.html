@@ -5,7 +5,12 @@ style: gallery
 ---
 <main id="gallery">
 	{% for folder in site.gallery-photos %}
-		<h2>{{ folder.name }}</h2>
+		<h2>
+			{{ folder.name }} 
+			{% if folder.photos %}
+				<i class="collapse down-arrow" onclick="galleryToggle('{{ folder.id }}', this)";>↓</i>
+			{% endif %}
+		</h2>
 		{% if folder.photos %}
 			{% assign sortedPhotos = (folder.photos | sort: "size") %}
 			<section id="{{ folder.id }}">

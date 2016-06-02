@@ -3,7 +3,7 @@
  ****************************/
  
 /* Page Structure */
- #gallery section {
+#gallery section {
 	/* Prevent vertical gaps */
 	line-height: 0;
 
@@ -22,7 +22,34 @@
 	text-align: center;
 	font-size: 4em;
 	padding: 25px 0;
+	margin-left: -0.25em;
+	margin-right: .5em;
 }
+#gallery h2 i.collapse {
+	font-size: 50%;
+	padding: .25em;
+	display: inline-block;
+	margin-left: .5em;
+	margin-top: .5em;
+	position: absolute;
+	
+	/* for animation effect */
+	transition: all 200ms ease-in;
+}
+#gallery h2 i.collapse:hover,
+#gallery h2 i.collapse:focus {
+	cursor: pointer;
+}
+#gallery h2 i.collapse.up-arrow {
+	transition: all 200ms ease-in;
+	-webkit-transform: 	rotate(-180deg);
+    -moz-transform: 	rotate(-180deg);
+    -o-transform: 		rotate(-180deg);
+    -ms-transform: 		rotate(-180deg);
+    transform: 			rotate(-180deg);
+	-webkit-transition: transform 200ms ease-in;
+}
+
 #gallery span {
 	display: block;
 	color: #999;
@@ -64,7 +91,7 @@
     margin:auto;
 	z-index: 100;
 	background-color: #000;
-	
+		
 	text-align: center;
 	line-height: 100vh;
 }
