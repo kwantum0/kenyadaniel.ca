@@ -49,9 +49,6 @@
 	column-break-inside:avoid;
 	-webkit-backface-visibility:hidden;
 }
-#gallery section a {
-	font-size: 0px;
-}
 /* For Fullscreen Mode */
 .full-body-html {
 	overflow: hidden;
@@ -162,5 +159,6 @@
 		-o-transform: 		none;
 		-ms-transform: 		none;
 		transform: 			none;
+		cursor: pointer;
 	}
 }
