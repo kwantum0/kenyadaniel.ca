@@ -109,7 +109,7 @@ let toggleFullscreen = function(element) {
 /********************
  *		MAIN		*
  ********************/
-$(document).ready(function(){
+$(window).load(function(){
 	if($("#gallery")){
 		$("section img").unveil(200, function() {
 			$(this).load(function() {
