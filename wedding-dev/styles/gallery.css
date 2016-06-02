@@ -70,7 +70,8 @@
 	line-height: 100vh;
 }
 #gallery section .fullscreen-div img,
-#gallery section .fullscreen-div img:hover {
+#gallery section .fullscreen-div img:hover,
+#gallery section .fullscreen-div img:focus {
 	/* removes animation effects */
 	-webkit-transform: 	none;
 	-moz-transform: 	none;
@@ -95,7 +96,8 @@
 }
 
 /* Required for hover to work */
-#gallery section img:hover {
+#gallery section img:hover,
+#gallery section img:focus {
     -webkit-transform: 	scale(1.2);
     -moz-transform: 	scale(1.2);
     -o-transform: 		scale(1.2);
@@ -151,7 +153,8 @@
  ****************************/
 @media (pointer: coarse),
 @media (pointer: none) {
-	#gallery section img:hover {
+	#gallery section img:hover,
+	#gallery section img:focus	{
 		-webkit-transform: 	none;
 		-moz-transform: 	none;
 		-o-transform: 		none;

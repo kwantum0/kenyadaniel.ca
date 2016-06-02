@@ -118,10 +118,12 @@ nav.mobile ul li {
 nav.mobile ul li {
 	padding: 0.5em 0em;
 }
-nav.mobile:hover > ul {
+nav.mobile:hover > ul,
+nav.mobile:focus > ul {
 	display: block;
 }
-nav.mobile:hover > h2 {
+nav.mobile:hover > h2,
+nav.mobile:focus > h2 {
 	color: #e0e0e0;
 }
 /* Horizontal Navigation Bar */
@@ -144,7 +146,8 @@ nav  ul  li  a {
 	color: #413E34;
 	text-decoration: none;
 }
-nav  ul  li  a:hover {
+nav  ul  li  a:hover,
+nav  ul  li  a:focus {
 	color: #555;
 	padding-top: 0.35em;
 	padding-bottom: 0.65em;

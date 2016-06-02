@@ -9,7 +9,7 @@ style: gallery
 		{% if folder.photos %}
 			<section id="{{ folder.id }}">
 				{% for file in folder.photos %}
-				<div data-width="{{ file.width }}" data-height="{{ file.height }}">
+				<div img-width="{{ file.width }}" img-height="{{ file.height }}" img-size="{{ file.size }}">
 					<img src="{{ site.app-path | append: site.empty-image-path }}" data-src="{{ file.url }}" title="{{ file.title }}" alt="{{ file.tags | join: ' '}}" />
 				</div>
 				{% endfor %}
