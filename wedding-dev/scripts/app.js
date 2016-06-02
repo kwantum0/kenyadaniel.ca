@@ -128,6 +128,6 @@ $(document).ready(function(){
 				return eb >= wt - imgLoadThreshold && et <= wb + imgLoadThreshold;
 			});
 			inview.trigger("unveil");
-		},100);
+		},2000);
 	}
 });
