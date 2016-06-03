@@ -1,7 +1,35 @@
+---
+---
 /****************************
  *		1200px and up		*
  ****************************/
-
+.hidden {
+	display: none;
+}
+main {
+	font-family: Lulo, san-serif;
+}
+label em {
+	font-family: Coronet, serif;
+	font-size: 1.5em;
+	color: #C5B358;
+	display: inline-block;
+	padding: 0 0.2em;
+	margin-left: -0.2em;
+}
+main section {
+	padding: 1em;
+}
+#enter-code {
+	text-align: center;
+	font-size: 2.5em;
+}
+#enter-code label {
+	display: block;
+	margin: 0 auto;
+	line-height: 1.75em;
+	margin-top: 10vh;
+}
 /******************************
  *		800px to 1199px		  *
  ******************************/

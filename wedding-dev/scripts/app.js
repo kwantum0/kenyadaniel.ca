@@ -18,8 +18,9 @@ var config = {
  *		FIREBASE		*
  ************************/
 firebase.initializeApp(config);
-var photoStorage = firebase.storage();
-  
+var database = firebase.database();
+var storage = firebase.storage();
+
 /****************************
  *		UTILITY FUNC		*
  ****************************/
