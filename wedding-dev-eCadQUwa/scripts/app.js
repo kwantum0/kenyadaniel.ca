@@ -345,9 +345,7 @@ $(window).load(function(){
 	/* RSVP PAGE */
 	if($("#rsvpForm")){
 		// Combine focus states of button and field
-		$("#rsvpCode").focus(function(){
-			$("#splashSubmit").addClass("focus");
-		});
+		$("#rsvpCode").focus(function(){$("#splashSubmit").addClass("focus");});
 		$("#splashSubmit").focus(function(){$("#rsvpCode").addClass("focus");});
 		$("#splashSubmit").blur(function(){
 			if(!$(this).is(":hover")) {

@@ -92,12 +92,14 @@ button.error {
 	color: #fff !important;
 	border-color: #B33A3A !important; 
 }
-input[type="text"].error {
+input[type="text"].error,
+input[type="tel"].error {
 	background-color: #fff !important;
 	color: #B33A3A !important;
 	border-color: #B33A3A !important;
 }
-input[type="text"].error + label {
+input[type="text"].error + label,
+input[type="tel"].error + label  {
 	color: #B33A3A !important;
 }
 button.success {
@@ -105,7 +107,8 @@ button.success {
 	color: #fff !important;
 	border-color: #89C057 !important;
 }
-input[type="text"].success {
+input[type="text"].success,
+input[type="tel"].success {
 	background-color: #fff !important;
 	color: #89C057 !important;
 	border-color: #89C057 !important;
@@ -201,7 +204,8 @@ button#splashSubmit.focus {
 }
 
 /* SPLASH Input Field */
-input[type="text"] {
+input[type="text"],
+input[type="tel"] {
 	text-align: center;
 	font-family: Lulo, san-serif;
 	color: #413E34;
@@ -218,7 +222,9 @@ input[type="text"] {
 	transition: all ease-in 0.3s;
 }
 input[type="text"]:focus,
-input[type="text"].focus {
+input[type="text"].focus,
+input[type="tel"]:focus,
+input[type="tel"].focus  {
 	outline: none;
 	border-bottom: solid 2px #C5B358;
 }

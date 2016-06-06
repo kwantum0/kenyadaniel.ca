@@ -345,21 +345,7 @@ $(window).load(function(){
 	/* RSVP PAGE */
 	if($("#rsvpForm")){
 		// Combine focus states of button and field
-		$("#rsvpCode").focus(function(){
-			$("#splashSubmit").addClass("focus");
-		});
-		$("#rsvpCode").click(function(){
-			var val = $(this).val();
-			if(val == "0000 0000" || val == ""){
-				$(this).caret(0,0);
-			}
-		});
-		$("#rsvpCode").blur(function(){
-			$("#splashSubmit").removeClass("focus");
-			if($(this).val() == "0000 0000") {
-				$(this).val('');
-			}
-		});
+		$("#rsvpCode").focus(function(){$("#splashSubmit").addClass("focus");});
 		$("#splashSubmit").focus(function(){$("#rsvpCode").addClass("focus");});
 		$("#splashSubmit").blur(function(){
 			if(!$(this).is(":hover")) {
