@@ -1,35 +1,323 @@
----
----
 /****************************
  *		1200px and up		*
  ****************************/
-.hidden {
-	display: none;
+/* Animations */
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 }
+@-webkit-keyframes shake {
+	from, to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+	10%, 30%, 50%, 70%, 90% {
+		-webkit-transform: translate3d(-10px, 0, 0);
+		transform: translate3d(-10px, 0, 0);
+	}
+
+	20%, 40%, 60%, 80% {
+		-webkit-transform: translate3d(10px, 0, 0);
+		transform: translate3d(10px, 0, 0);
+	}
+}
+@keyframes shake {
+	from, to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+	10%, 30%, 50%, 70%, 90% {
+		-webkit-transform: translate3d(-10px, 0, 0);
+		transform: translate3d(-10px, 0, 0);
+	}
+
+	20%, 40%, 60%, 80% {
+		-webkit-transform: translate3d(10px, 0, 0);
+		transform: translate3d(10px, 0, 0);
+	}
+}
+@-webkit-keyframes shake-vertical {
+	from, to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+	10%, 30%, 50%, 70%, 90% {
+		-webkit-transform: translate3d(0, -10px, 0);
+		transform: translate3d(0, -10px, 0);
+	}
+
+	20%, 40%, 60%, 80% {
+		-webkit-transform: translate3d(0, 10px, 0);
+		transform: translate3d(0, 10px, 0);
+	}
+}
+@keyframes shake-vertical {
+	from, to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+	10%, 30%, 50%, 70%, 90% {
+		-webkit-transform: translate3d(0, -10px, 0);
+		transform: translate3d(0, -10px, 0);
+	}
+
+	20%, 40%, 60%, 80% {
+		-webkit-transform: translate3d(0, 10px, 0);
+		transform: translate3d(0, 10px, 0);
+	}
+}
+.shake {
+	-webkit-animation-name: shake;
+	animation-name: shake;
+}
+
+/* Firefox misalignment fix */ 
+input, button {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 2em;
+	vertical-align: top;
+}
+
+/* transient states */
+button.error {
+	background-color: #B33A3A !important;
+	color: #fff !important;
+	border-color: #B33A3A !important; 
+}
+input[type="text"].error {
+	background-color: #fff !important;
+	color: #B33A3A !important;
+	border-color: #B33A3A !important;
+}
+input[type="text"].error + label {
+	color: #B33A3A !important;
+}
+button.success {
+	background-color: #89C057 !important;
+	color: #fff !important;
+	border-color: #89C057 !important;
+}
+input[type="text"].success {
+	background-color: #fff !important;
+	color: #89C057 !important;
+	border-color: #89C057 !important;
+}
+span.error {
+	color: #B33A3A !important;
+	font-weight: bold;
+	transition: color ease-in 0.2s;
+}
+
+/* Common Structure */
 main {
-	font-family: Lulo, san-serif;
+	font-family: Lulo, sans-serif;
+	color: #413E34;
 }
-label em {
-	font-family: Coronet, serif;
+h1 {
+	font-family: Coronet;
+	font-size: 4em;
+	margin-left: -0.25em;
+}
+h3 {
+	font-size: .75em;
+	line-height: 2em;
+	padding: 1em 5%;
+}
+h2 {
 	font-size: 1.5em;
+	line-height: 2em;
+	padding-bottom: 1em;
+}
+h2 em{
+	font-size: 1.5em;
+	font-family: Coronet, serif;
 	color: #C5B358;
-	display: inline-block;
-	padding: 0 0.2em;
-	margin-left: -0.2em;
+	letter-spacing: 0.2em;
+	vertical-align: bottom;
 }
-main section {
-	padding: 1em;
-}
-#enter-code {
+section#splash {
 	text-align: center;
-	font-size: 2.5em;
-}
-#enter-code label {
-	display: block;
-	margin: 0 auto;
-	line-height: 1.75em;
 	margin-top: 10vh;
 }
+
+/* SPLASH Submit Button */
+button > i {
+	display: block;
+	text-align: center;
+	line-height: 100%;
+	height: 100%;
+	padding: 0.125em 0 0 0.1em;
+}
+button#splashSubmit:hover[disabled],
+button#splashSubmit {
+	font-family: Lulo, san-serif;
+	color: #fff;
+	display: inline-block;
+	margin: 0;
+	width: 2em;
+	font-size: 2em;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+	padding: 10px;
+	border: none;
+	background-color: #e0e0e0;
+	border-bottom: solid 2px #e0e0e0;
+	transition: all ease-in	0.3s;
+}
+button#splashSubmit:hover {
+	cursor: pointer;
+}
+button#splashSubmit:hover,
+button#splashSubmit:focus,
+button#splashSubmit.focus {
+	outline: none;
+	border-bottom: solid 2px #C5B358;
+	background-color: #C5B358;
+}
+
+/* SPLASH Input Field */
+input[type="text"] {
+	text-align: center;
+	font-family: Lulo, san-serif;
+	color: #413E34;
+	display: inline-block;
+	margin: 0;
+	width: 8.5em;
+	font-size: 2em;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+	padding: 10px;
+	border: none;
+	border-bottom: solid 2px #e0e0e0;
+	transition: all ease-in 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+	outline: none;
+	border-bottom: solid 2px #C5B358;
+}
+input[disabled] {
+	color: #e0e0e0;
+}
+
+/* FORM inputs */
+#form {
+	display: none;
+}
+#form > div {
+	position: relative;
+	display: inline-block;
+	width: 42.5%;
+	margin: 0% 0% 0% 5%;
+	text-align: left;
+	background-color: #fff;
+	margin-top: 40px;
+}
+#form > div > label {
+	position: absolute;
+	transition: 0.2s;
+	right: 0;
+	left: 0;
+	top: 2px;
+	bottom: 0px;
+	font-size: 1.5em;
+	padding: 10px;
+	color: #aaa;
+	z-index: 1;
+}
+#form > div > input {
+	text-align: left;
+	font-size: 1.5em;
+	position: relative;
+	width: 100%;
+	z-index: 10;
+	background-color: rgba(0,0,0,0);
+}
+#form > div > input:valid + label  {
+	font-size: 100%;
+	top: -66%;
+	transition: 0.2s;
+	color: #aaa;
+}
+#form > div > input:focus + label {
+	font-size: 100%;
+	top: -66%;
+	transition: 0.2s;
+	color: #C5B358;
+}
+#form h3 {
+	text-align: center;
+}
+#form section#guests > div {
+	margin: 40px 5%;
+}
+#form section#guests > div > div {
+	margin-top: 20px;
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+}
+#form section#guests > div > div > input {
+	width: 2em;
+	margin: 0 1em 0 0;
+	padding-right: 1em;
+	vertical-align: middle;
+	
+}
+#form section#guests input:checked + span {
+	color: #C5B358;
+	font-weight: bold;
+}
+
+/* FORM Submit Button */
+#form div.button {
+	display: block;
+	width: 100%;
+	background-color: rgba(0,0,0,0);
+	text-align: center;
+	margin: 0;
+}
+button#formSubmit {
+	height: 3em;
+	margin: 40px 0px;
+	font-family: Lulo, san-serif;
+	color: #C5B358;
+	display: inline-block;
+	font-size: 1.5em;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+	padding: 15px;
+	border: 2px solid #C5B358;
+	background-color: #fff;
+	transition: none;
+}
+button#formSubmit:hover,
+button#formSubmit:focus {
+	margin: 35px 0px 45px;
+	border-color: #C5B358;
+	background-color: #C5B358;
+	color: #fff;
+	transition: all ease-in	0.3s;
+}
+button#formSubmit:active {
+	margin: 40px 0px;
+	color: #fff;
+	background-color: #e0e0e0;
+	border-color: #e0e0e0;
+	transition: none;
+}
+
 /******************************
  *		800px to 1199px		  *
  ******************************/
@@ -40,12 +328,50 @@ main section {
  *		600px to 799px		*
  ****************************/
 @media (max-width: 799px) {
-
+	#form > div {
+		display: block;
+		margin: 40px auto 10px;
+		width: 90%;
+	}
+	#form section#guests > div {
+		font-size: 75%;
+	}
 }
  
 /****************************
  *		Up to 599px			*
  ****************************/
 @media (max-width: 599px) {
-
+	button#splashSubmit,
+	input#rsvpCode {
+		display: block;
+		width: 100%;
+		transition: none;
+	}
+	.shake {
+		-webkit-animation-name: shake;
+		animation-name: shake-vertical;
+	}
+	#form > div {
+		width: 100%;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	#form section#guests > div {
+		font-size: 100%;
+	}
+	#form section#guests > div > div {
+		margin-top: 20px;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	#form section#guests > div > h1 {
+		text-align: center;
+	}
+	button#formSubmit {
+		width: 100%;
+		border-right: none;
+		border-left: none;
+	}
 }
