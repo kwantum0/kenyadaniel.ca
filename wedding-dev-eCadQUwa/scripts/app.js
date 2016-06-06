@@ -9,9 +9,6 @@ var COMING_STR = "IS HAPPILY ATTENDING";
 var NOT_COMING_STR = "SENDS THEIR REGRETS";
 var FORM_TAB_START = 5;
 var IS_MOBILE = false;
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	IS_MOBILE = true;	
-}
 
 // GLOBAL REFERENCES
 var $fullscreenElement = null;
@@ -329,6 +326,11 @@ var firebaseValueCallback = function(snapshot){
  *		MAIN		*
  ********************/
 $(window).load(function(){
+	/* Mobile test */
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		IS_MOBILE = true;	
+	}
+	
 	/* GALLERY PAGE */
 	if($("#gallery")){
 		$("section img").unveil(IMG_LOAD_THRES, function() {
