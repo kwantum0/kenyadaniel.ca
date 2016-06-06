@@ -308,7 +308,7 @@ function splashScreenSubmit() {
 		// Get Data
 		var code = md5($("#rsvpCode").val().replace(" ", ""));
 		dataRef = database.ref('/' + code);
-		dataRef.on('value', firebaseValueCallback);
+		dataRef.once('value', firebaseValueCallback);
 	}
 }
 
@@ -318,9 +318,20 @@ var firebaseValueCallback = function(snapshot){
 	if (dataObj == null) {
 		setSplashState3();
 	} else {
+		logUserBehavior("User Opened RSVP", null);
 		setSplashState2(dataObj);
 	}
 };
+
+// Saves a User's Behaviour
+var logUserBehavior = function(message, payload){
+	logRef = dataRef.child("logs");
+	logRef.push({ 
+		'message' : message, 
+		'payload' : payload, 
+		'timestamp' : firebase.database.ServerValue.TIMESTAMP
+		});
+}
 
 /********************
  *		MAIN		*
@@ -350,6 +361,7 @@ $(window).load(function(){
 	
 	/* RSVP PAGE */
 	if($("#rsvpForm")){
+		
 		// Combine focus states of button and field
 		$("#rsvpCode").blur(function(){$("#splashSubmit").removeClass("focus");});
 		$("#rsvpCode").focus(function(){$("#splashSubmit").addClass("focus");});
@@ -444,6 +456,7 @@ $(window).load(function(){
 				
 				delete dataObj["location"];
 				delete dataObj["code"];
+				delete dataObj["logs"];
 				
 				dataObj.guests.forEach(function(guest, index, array){
 					delete guest["name"];
@@ -456,6 +469,11 @@ $(window).load(function(){
 								
 				// Have to turn off callback before exec, update
 				dataRef.off('value', firebaseValueCallback);
+				
+				// Log the update
+				logUserBehavior("User Saved RSVP", dataObj);
+				
+				// Perform update
 				dataRef.update(updates, function(error) {
 					if(error){
 						$("#formSubmit").addClass("error");
