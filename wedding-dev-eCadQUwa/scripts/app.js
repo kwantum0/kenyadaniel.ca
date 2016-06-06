@@ -351,6 +351,7 @@ $(window).load(function(){
 	/* RSVP PAGE */
 	if($("#rsvpForm")){
 		// Combine focus states of button and field
+		$("#rsvpCode").blur(function(){$("#splashSubmit").removeClass("focus");});
 		$("#rsvpCode").focus(function(){$("#splashSubmit").addClass("focus");});
 		$("#splashSubmit").focus(function(){$("#rsvpCode").addClass("focus");});
 		$("#splashSubmit").blur(function(){
@@ -377,6 +378,12 @@ $(window).load(function(){
 		// Set input masks for text fields
 		if(!IS_MOBILE){
 			$("#rsvpCode").mask("9999 9999",{placeholder:"0"});
+			$("#rsvpCode").click(function(){
+				var val = $(this).val();
+				if(val == "0000 0000" || val == ""){
+					$(this).caret(0,0);
+				}
+			});
 		}
 		
 		// Validate Email and Phone Fields
