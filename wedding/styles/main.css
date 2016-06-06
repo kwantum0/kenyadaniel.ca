@@ -20,6 +20,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -45,7 +46,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+*:focus {
+    outline:none;
+}
+strong {
+	font-weight: bold;
+}
 /************************
  *		1200px up		*
  ************************/
@@ -103,6 +109,7 @@ footer, .push {
 nav.mobile h2 {
 	text-align: center;
 	padding: 1em 0em;
+	font-size: 100%;
 }
 nav.mobile {
 	padding: 0;
@@ -177,7 +184,7 @@ footer img {
 
 /* For Announcement Pages */
 main.announcement {
-	font-family: Albertus, serif;
+	font-family: Coronet, serif;
 	font-size: 4em;
 	text-align: center;
 	padding: 4em 0em;

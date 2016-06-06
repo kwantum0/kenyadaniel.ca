@@ -389,5 +389,6 @@ button#formSubmit:active {
 		width: 100%;
 		border-right: none;
 		border-left: none;
+		height: auto;
 	}
 }

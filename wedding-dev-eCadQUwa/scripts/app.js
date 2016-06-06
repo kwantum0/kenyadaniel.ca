@@ -341,6 +341,7 @@ $(window).load(function(){
 			}
 		});
 	}
+	
 	/* RSVP PAGE */
 	if($("#rsvpForm")){
 		// Combine focus states of button and field
@@ -414,9 +415,10 @@ $(window).load(function(){
 				isValid = isValid && localValid;
 				if(!localValid) {
 					$(this).addClass("shake animated");
+					$(this).next().addClass("shake animated");
 					$(this).focus();
 					setTimeout(function(){
-						$('#phoneNumber').removeClass("shake animated");
+						$('#phoneNumber, #phoneNumber + label').removeClass("shake animated");
 					}, LOAD_ANI_DURATION);
 				}
 			});
@@ -427,9 +429,10 @@ $(window).load(function(){
 				isValid = isValid && localValid;
 				if(!localValid) {
 					$(this).addClass("shake animated");
+					$(this).next().addClass("shake animated");
 					$(this).focus();
 					setTimeout(function(){
-						$('#emailAddress').removeClass("shake animated");
+						$('#emailAddress, #emailAddress + label').removeClass("shake animated");
 					}, LOAD_ANI_DURATION);
 				}
 			});
