@@ -1,15 +1,17 @@
 # General App Variables
 name: Daniel & Kenya
-app-path: /wedding-dev-eCadQUwa
+app-path: /wedding
 markdown: kramdown
 
 # Pallet
-color-white: '#ffffff'
-color-primary: '#413E34'
-color-dark-grey: '#555555'
-color-grey: '#e0e0e0'
-color-background: '#8F7F71'
-color-accent: '#C5B358'
+color-white: 		'#ffffff'
+color-primary: 		'#413E34'
+color-dark-grey: 	'#555555'
+color-grey: 		'#e0e0e0'
+color-background: 	'#8F7F71'
+color-accent: 		'#C5B358'
+color-error:		'#B33A3A'
+color-success: 		'#89C057'
 
 # Pretty Url Rewrite
 permalink: /:title

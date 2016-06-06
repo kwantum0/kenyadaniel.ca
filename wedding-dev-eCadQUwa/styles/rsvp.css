@@ -147,7 +147,22 @@ section#splash {
 	text-align: center;
 	margin-top: 10vh;
 }
-
+#form, #thankYou, #error {
+	display: none;
+}
+section#error, section#thankYou {
+	text-align: center;
+	margin-top: 15vh;
+}
+section#thankYou h2, section#error h2 {
+	padding: 0px;
+}
+section#error h3 {
+	font-size: 1em;
+}
+section#thankYou h1 {
+	font-size: 5em;
+}
 /* SPLASH Submit Button */
 button > i {
 	display: block;
@@ -157,6 +172,7 @@ button > i {
 	padding: 0.125em 0 0 0.1em;
 }
 button#splashSubmit:hover[disabled],
+button#splashSubmit:focus[disabled],
 button#splashSubmit {
 	font-family: Lulo, san-serif;
 	color: #fff;
@@ -211,9 +227,6 @@ input[disabled] {
 }
 
 /* FORM inputs */
-#form {
-	display: none;
-}
 #form > div {
 	position: relative;
 	display: inline-block;
@@ -310,6 +323,9 @@ button#formSubmit:focus {
 	color: #fff;
 	transition: all ease-in	0.3s;
 }
+button#formSubmit:hover[disabled],
+button#formSubmit:focus[disabled],
+button#formSubmit[disabled],
 button#formSubmit:active {
 	margin: 40px 0px;
 	color: #fff;

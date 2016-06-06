@@ -43,7 +43,7 @@ var dataObj = null;
  ****************************/
 // Capitalize Strings
 var toTitleCase = function(str) {
-    return str.replace(/\w*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    return str ? str.replace(/\w*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : "";
 }
 
 // Generates a Unique ID
@@ -168,16 +168,21 @@ var AnimateRotate = function(elem, angle, repeat) {
 // Function to validate guest radio buttons
 var validateGuestRadios = function(input) {
 	var name = $(input).attr("name");
-	var hasChecked = false;
+	var id = $(input).parent().parent().attr("id").substring(1);
+	var value = 0;
 	$('input[name="' + name + '"]').each(function() {
-		hasChecked = hasChecked || $(this).is(":checked");
+		if($(this).is(":checked")){
+			value = parseInt($(this).val());
+		}
 	});
-	if(!hasChecked) {
+	if(value <= 0) {
 		$('input[name="' + name + '"] + span').addClass("error");
+		delete dataObj.guests[id].rsvp;
 	} else {
 		$('input[name="' + name + '"] + span').removeClass("error");
+		dataObj.guests[id].rsvp = value;
 	}
-	return hasChecked;
+	return (value > 0);
 };
 
 // Function to validate email addresses
@@ -274,6 +279,8 @@ function setSplashState2(data) {
 	// add blur function		
 	$('input[type="radio"]').blur(function(){validateGuestRadios(this)});
 	$('input[type="radio"]').click(function(){validateGuestRadios(this)});
+	
+	if($('input[type="radio"]').is(":checked")){$("#formSubmit").html("UPDATE YOUR REPLY");}
 }
 function setSplashState3() {
 	// Perform Error
@@ -300,16 +307,19 @@ function splashScreenSubmit() {
 		// Get Data
 		var code = md5($("#rsvpCode").val().replace(" ", ""));
 		dataRef = database.ref('/' + code);
-		dataRef.on('value', function(snapshot){
-			dataObj = snapshot.val();
-			if (dataObj == null) {
-				setSplashState3();
-			} else {
-				setSplashState2(dataObj);
-			}
-		});
+		dataRef.on('value', firebaseValueCallback);
 	}
 }
+
+// Firebase Callback for 'value'
+var firebaseValueCallback = function(snapshot){
+	dataObj = snapshot.val();
+	if (dataObj == null) {
+		setSplashState3();
+	} else {
+		setSplashState2(dataObj);
+	}
+};
 
 /********************
  *		MAIN		*
@@ -382,12 +392,13 @@ $(window).load(function(){
 		
 		// Validate on Submit
 		$("#formSubmit").click(function() {
+			$("#formSubmit").prop( "disabled", true );
 			var isValid = true;
 			
 			// radio buttons (in reverse order)
 			$($('input[type="radio"]').get().reverse()).each(function(){
 				var localValid = validateGuestRadios(this);
-				var isValid = isValid && localValid;
+				isValid = isValid && localValid;
 				if(!localValid) {
 					$(this).parent().addClass("shake animated");
 					$(this).focus();
@@ -400,7 +411,7 @@ $(window).load(function(){
 			// phone number
 			$('#phoneNumber').each(function(){
 				var localValid = validatePhoneNumber(this);
-				var isValid = isValid && localValid;
+				isValid = isValid && localValid;
 				if(!localValid) {
 					$(this).addClass("shake animated");
 					$(this).focus();
@@ -413,7 +424,7 @@ $(window).load(function(){
 			// email address
 			$('#emailAddress').each(function(){
 				var localValid = validateEmailAddress(this);
-				var isValid = isValid && localValid;
+				isValid = isValid && localValid;
 				if(!localValid) {
 					$(this).addClass("shake animated");
 					$(this).focus();
@@ -422,6 +433,44 @@ $(window).load(function(){
 					}, LOAD_ANI_DURATION);
 				}
 			});
+			
+			// IF ALL GOOD
+			if(isValid) {
+				var updates = {};
+				
+				delete dataObj["location"];
+				delete dataObj["code"];
+				
+				dataObj.guests.forEach(function(guest, index, array){
+					delete guest["name"];
+					if(guest.rsvp){
+						updates["/guests/" + index + "/rsvp"] = guest.rsvp;
+					}
+				});
+				if(dataObj.email) {	updates["/email"] = dataObj.email; }
+				if(dataObj.phone) { updates["/phone"] = dataObj.phone; }
+								
+				// Have to turn off callback before exec, update
+				dataRef.off('value', firebaseValueCallback);
+				dataRef.update(updates, function(error) {
+					if(error){
+						$("#formSubmit").addClass("error");
+						setTimeout(function(){
+							$("#form").slideUp(200);
+							$("#error").slideDown(200);
+						}, LOAD_ANI_DURATION / 2)
+					} else {
+						$("#formSubmit").addClass("success");
+						setTimeout(function(){
+							$("#form").slideUp(200);
+							$("#thankYou").slideDown(200);
+						}, LOAD_ANI_DURATION / 2)
+					}
+
+				});
+			} else {
+				$("#formSubmit").prop( "disabled", false );
+			}
 		});
 	}
 });

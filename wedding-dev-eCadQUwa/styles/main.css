@@ -49,7 +49,9 @@ table {
 *:focus {
     outline:none;
 }
-
+strong {
+	font-weight: bold;
+}
 /************************
  *		1200px up		*
  ************************/
