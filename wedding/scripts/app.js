@@ -8,6 +8,10 @@ var PHONE_REGEX = /^([#+xX. \(\)\-\[\]]*?\d[#+xX. \(\)\-\[\]]*?){10,16}$/;
 var COMING_STR = "IS HAPPILY ATTENDING";
 var NOT_COMING_STR = "SENDS THEIR REGRETS";
 var FORM_TAB_START = 5;
+var IS_MOBILE = false;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	IS_MOBILE = true;	
+}
 
 // GLOBAL REFERENCES
 var $fullscreenElement = null;
@@ -369,7 +373,9 @@ $(window).load(function(){
 		});
 		
 		// Set input masks for text fields
-		$("#rsvpCode").mask("9999 9999",{placeholder:"0"});
+		if(!IS_MOBILE){
+			$("#rsvpCode").mask("9999 9999",{placeholder:"0"});
+		}
 		
 		// Validate Email and Phone Fields
 		$("#emailAddress").blur(function(){validateEmailAddress(this);});
