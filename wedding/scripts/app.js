@@ -274,6 +274,21 @@ function setSplashState2(data) {
 		guestList.append(element);
 	});
 	
+	// Add extra guest section
+	if(data.location == "KEN" && "extraGuests" in dataObj) {
+		var element = $('<div id="extra"></div>');
+		element.append('<h2>together with party of&nbsp;</h2>');
+		element.append('<div class="selectParent"><select id="extraGuests">' 
+					   + '<option value="0"' + (data.extraGuests == 0 ? 'selected' : '') + '>0</option>'
+					   + '<option value="1"' + (data.extraGuests == 1 ? 'selected' : '') + '>1</option>'
+					   + '<option value="2"' + (data.extraGuests == 2 ? 'selected' : '') + '>2</option>'
+					   + '<option value="3"' + (data.extraGuests == 3 ? 'selected' : '') + '>3</option>'
+					   + '<option value="4"' + (data.extraGuests == 4 ? 'selected' : '') + '>4</option>'
+					   + '</select></div>');
+		guestList.append(element);
+		
+	}
+	
 	// set tab index for submit
 	$("#formSubmit").attr("tabindex", data.guests.length * 2 + FORM_TAB_START);
 	
@@ -464,8 +479,13 @@ $(window).load(function(){
 						updates["/guests/" + index + "/rsvp"] = guest.rsvp;
 					}
 				});
-				if(dataObj.email) {	updates["/email"] = dataObj.email; }
-				if(dataObj.phone) { updates["/phone"] = dataObj.phone; }
+				if(dataObj.email) 		{ updates["/email"] = dataObj.email; }
+				if(dataObj.phone) 		{ updates["/phone"] = dataObj.phone; }
+				
+				if("extraGuests" in dataObj){
+					dataObj.extraGuests = parseInt($("#extraGuests").val()); 
+					updates["/extraGuests"] = dataObj.extraGuests;
+				}
 								
 				// Have to turn off callback before exec, update
 				dataRef.off('value', firebaseValueCallback);

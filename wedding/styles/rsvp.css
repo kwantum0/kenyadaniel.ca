@@ -298,6 +298,35 @@ input[disabled] {
 	font-weight: bold;
 }
 
+#form section#guests h2 {
+	font-family: Coronet;
+	font-size: 3em;
+	margin-left: -0.25em;
+	display: inline-block;
+}
+#form section#guests select {
+	background: transparent;
+	padding: 5px;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+	font-family: Lulo, sans-serif !important;
+	font-size: 1em;
+	color: #413E34;
+}
+#form section#guests .selectParent {
+	margin: 0;
+	margin-left: 1em;
+	overflow: hidden;
+	border-bottom: 1.5px dashed #413E34;
+	min-width: 2em;
+	width: auto;
+	font-family: Lulo, sans-serif !important;
+	font-size: 1.5em !important;
+	vertical-align: text-bottom;
+}
+
 /* FORM Submit Button */
 #form div.button {
 	display: block;
@@ -396,5 +425,14 @@ button#formSubmit:active {
 		border-right: none;
 		border-left: none;
 		height: auto;
+	}
+	div.selectParent {
+		display: inline-block !important;
+	}
+	#form section#guests h2 {
+		font-size: 2em !important;
+	}
+	#extra {
+		text-align: center;
 	}
 }

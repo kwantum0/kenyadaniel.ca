@@ -1,7 +1,11 @@
 /****************************
  *		1200px and up		*
  ****************************/
-
+main {
+	font-family: Lulo, sans-serif;
+	font-size: 1.5em;
+	line-height: 2em;
+}
  
 /******************************
  *		800px to 1199px		  *
