@@ -1,3 +1,19 @@
+@font-face {
+	font-family: 'Coronet';
+    src: url('fonts/coronet.eot');
+    src: url('fonts/coronet.eot?iefix') format('eot'), 
+         url('fonts/coronet.woff') format('woff'), 
+         url('fonts/coronet.ttf') format('truetype'), 
+         url('fonts/coronet.svg#webfont') format('svg');
+}
+@font-face {
+	font-family: 'Lulo';
+    src: url('fonts/lulo.eot');
+    src: url('fonts/lulo.eot?iefix') format('eot'), 
+         url('fonts/lulo.woff') format('woff'), 
+         url('fonts/lulo.ttf') format('truetype'), 
+         url('fonts/lulo.svg#webfont') format('svg');
+}
 /************************
  *		CSS RESET		*
  ************************/

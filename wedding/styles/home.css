@@ -18,7 +18,7 @@ main span.message:last-of-type{
 }
 main  h1 {
 	color: #C5B358;
-	font-family: Coronet, cursive;
+	font-family: Coronet, serif;
 	font-size: 100px;
 	display:inline-block;
 	width: 220px;
