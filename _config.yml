@@ -19,6 +19,12 @@ permalink: /:title
 # For Gallery
 empty-image-path: /assets/null.png
 gallery-photos:
+- name: Wedding Ceremony
+  id: church
+  photos: 
+- name: Reception
+  id: party
+  photos: 
 - name: Together as a Couple
   id: couple
   photos:
@@ -637,9 +643,3 @@ gallery-photos:
     size: 461.4 
     tags: [kenya, zach, daniel, rockway-gardens]
     url: https://firebasestorage.googleapis.com/v0/b/wedding-36c46.appspot.com/o/gallery-photos%2Fcivil-marriage%2FZach%20and%20Couple%202%20(1080x856).jpg?alt=media&token=1f5cbae1-5057-41d7-b0e4-5ea340864be0
-- name: Wedding Ceremony
-  id: church
-  photos: 
-- name: Reception
-  id: party
-  photos: 
