@@ -1,0 +1,83 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
+</head>
+<body>
+	<table>
+		<thead>
+		  <tr>
+			<th>Code</th>
+			<th>Location</th>
+			<th>Extras</th>
+			<th>Name</th>
+			<th>RSVP</th>
+			<th>Email</th>
+			<th>Phone</th>
+		  </tr>
+		</thead>
+		<tbody id="list">
+		  
+		</tbody>
+	</table>
+	<script type="text/javascript" src="data.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<script>
+	var toTitleCase = function(str) {
+		return str ? str.replace(/\w*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : "";
+	}
+	var lookup = function(num) {
+		if(num == 0) {
+			_NOREPLY++;
+			return "No Reply";
+		} else if(num == 1) {
+			_ATTENDING++;
+			return "Attending";
+		} else if(num == 2) {
+			_REGRETS++;
+			return "Sends Regrets";
+		} else {
+			return "BROKEN";
+		}
+	}
+	
+	var _ATTENDING = 0;
+	var _GUESTS = 0;
+	var _NOREPLY = 0;
+	var _REGRETS = 0;
+	
+	for(var key in data) {
+		if (!data.hasOwnProperty(key)) {
+		continue;
+	  }
+	  var res = data[key];
+	  var code = res["code"] ? res["code"] : "error";
+	  var email = res["email"] ? res["email"] : "";
+	  var phone = res["phone"] ? res["phone"] : "";
+	  var loc = res["location"] ? res["location"] : "";
+	  var extra = res["extraGuests"] ? res["extraGuests"] : res["extraGuests"] == 0 ? 0 : "";
+	  _GUESTS = _GUESTS + (Number.isInteger(extra) ? extra : 0);
+	  if(res["guests"]) {
+		res["guests"].forEach(function(e, i, a) {
+		  $("#list").append(
+			"<tr><td>" + code + "</td><td>" + loc + "</td><td>" + extra + "</td><td>" + toTitleCase(e["name"]) + "</td><td>" + lookup(e["rsvp"]) + "</td><td>" + email + "</td><td>" + phone + "</td></tr>"
+		  );
+		});
+	  }
+	 }
+	$(document).ready(function(){
+		$('table').DataTable({
+			"paging":false,
+			"scrollY": "80%",
+			"scrollCollapse": true,
+			"infoCallback": function( settings, start, end, max, total, pre ) {
+				return ("Attending (Guests): " + String(_ATTENDING) + " (" + String(_GUESTS) + ")" +
+						" | Sends Regrets: " + String(_REGRETS) + 
+						" | No Reply: " + String(_NOREPLY) + 
+						" | Viewing: " + total + " of " + max);
+			}
+		});
+	});
+	</script>
+</body>
+</html>
