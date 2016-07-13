@@ -1,9 +1,26 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
+	<style>
+		table > tbody > tr.striped {
+			background-color: #eee !important;
+		}
+		table > tbody > tr:hover {
+			background-color: #ddd !important;
+		}
+		span.green {
+			background-color: #b2d8b2;
+		}
+		span.yellow {
+			background-color: #ffffb2;
+		}
+		span.red {
+			background-color: #ffb2b2;
+		}
+	</style>
 </head>
 <body>
-	<table>
+	<table class="hover compact" cellspacing="0" width="100%">
 		<thead>
 		  <tr>
 			<th>Code</th>
@@ -22,29 +39,63 @@
 	<script type="text/javascript" src="data.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
 	<script>
-	var toTitleCase = function(str) {
-		return str ? str.replace(/\w*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : "";
-	}
-	var lookup = function(num) {
-		if(num == 0) {
-			_NOREPLY++;
-			return "No Reply";
-		} else if(num == 1) {
-			_ATTENDING++;
-			return "Attending";
-		} else if(num == 2) {
-			_REGRETS++;
-			return "Sends Regrets";
-		} else {
-			return "BROKEN";
+	// Initialize Firebase
+	var table = null;
+	var config = {
+		apiKey: "AIzaSyDEMkdlVuBzFKJU0G2ed7F-ByClU21Iowk",
+		authDomain: "wedding-36c46.firebaseapp.com",
+		databaseURL: "https://wedding-36c46.firebaseio.com",
+		storageBucket: "wedding-36c46.appspot.com",
+	};
+	firebase.initializeApp(config);
+	firebase.auth().signInWithEmailAndPassword("admin@kenyadaniel.ca", "5F4DCC3B5AA765D61D8327DEB882CF99").catch(function(error){
+		console.log("ERROR: could not login!");
+	});
+	firebase.database().ref('/').on('value', function(snapshot){
+		buildTable(snapshot.val());
+	});
+	  
+	var buildTable = function(data) {
+		if(table) { table.destroy(); }
+		
+		var recolor = function(){
+			var isStriped = false;
+			var lastCode = "";
+			$("#list").children().each(function(){
+				var code = $(this).children().first().text();
+				if(code != lastCode) {
+					isStriped = !isStriped;
+				}
+				$(this).removeClass("striped");
+				$(this).addClass( isStriped ? "striped" : "");
+				lastCode = code;
+			});
 		}
-	}
+		var toTitleCase = function(str) {
+			return str ? str.replace(/\w*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : "";
+		}
+		var lookup = function(num) {
+			if(num == 0) {
+				_NOREPLY++;
+				return "<span class=\"yellow\">No Reply<span>";
+			} else if(num == 1) {
+				_ATTENDING++;
+				return "<span class=\"green\">Attending<span>";
+			} else if(num == 2) {
+				_REGRETS++;
+				return "<span class=\"red\">Sends Regrets<span>";
+			} else {
+				return "BROKEN";
+			}
+		}
 	
-	var _ATTENDING = 0;
-	var _GUESTS = 0;
-	var _NOREPLY = 0;
-	var _REGRETS = 0;
+		var _ATTENDING = 0;
+		var _GUESTS = 0;
+		var _NOREPLY = 0;
+		var _REGRETS = 0;
+		$("#list").empty();
 	
 	for(var key in data) {
 		if (!data.hasOwnProperty(key)) {
@@ -65,19 +116,22 @@
 		});
 	  }
 	 }
-	$(document).ready(function(){
-		$('table').DataTable({
+		table = $('table').DataTable({
 			"paging":false,
 			"scrollY": "80%",
 			"scrollCollapse": true,
+			"order": [[ 4, "asc" ],[ 1, "asc" ],[ 0, "asc" ],[ 3, "asc" ]],
 			"infoCallback": function( settings, start, end, max, total, pre ) {
-				return ("Attending (Guests): " + String(_ATTENDING) + " (" + String(_GUESTS) + ")" +
-						" | Sends Regrets: " + String(_REGRETS) + 
-						" | No Reply: " + String(_NOREPLY) + 
-						" | Viewing: " + total + " of " + max);
+				return ("<span class=\"green\">Attending (Guests): <b>" + String(_ATTENDING) + " (" + String(_GUESTS) + ")" +
+						"</b></span> | <span class=\"red\">Sends Regrets: <b>" + String(_REGRETS) + 
+						"</b></span> | <span class=\"yellow\">No Reply: <b>" + String(_NOREPLY) + 
+						"</b></span> | Viewing: " + total + " of " + max);
 			}
 		});
-	});
+		table.on("order.dt", recolor);
+		table.on("search.dt", recolor);
+		recolor();
+	}
 	</script>
 </body>
 </html>
